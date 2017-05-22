@@ -6,23 +6,23 @@ Direct3D:
     Vendor:   Intel
     VRAM:     606 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.148 seconds
-Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer2_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.432 seconds
+Platform assembly: E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Project\WEBPROJECT\htdocs\GITHUB\Game3DMultiplayerUnity\Build\game3dmultiplayer2_Data\Managed\System.dll (this message is harmless)
 desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.193222 ms
+UnloadTime: 14.422933 ms
 Start Backsound : True
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
@@ -32,8 +32,16 @@ Start Fullscreen : True
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1f80 -> priority: 1 
-Fullscreen : False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+  Thread -> id: c00 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 11.469741 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 247.
+Total: 0.491803 ms (FindLiveObjects: 0.060646 ms CreateObjectMapping: 0.020373 ms MarkObjects: 0.314129 ms  DeleteObjects: 0.087652 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.108217 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 523.
+Total: 0.749077 ms (FindLiveObjects: 0.099024 ms CreateObjectMapping: 0.027006 ms MarkObjects: 0.595092 ms  DeleteObjects: 0.018478 ms)
 

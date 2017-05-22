@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\RoomMultiplayer.cs">
+    <Files>
+      <File FileName="Assets\script\PengaturanMultiplayer.cs" Line="7" Column="22" />
+      <File FileName="Assets\script\RoomMultiplayer.cs" Line="1" Column="19" />
+      <File FileName="Assets\script\Room.cs" Line="16" Column="25" />
+      <File FileName="Assets\script\GameObjectHelper.cs" Line="7" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
