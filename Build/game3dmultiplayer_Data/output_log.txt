@@ -14,7 +14,7 @@ Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplay
 Loading E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.356 seconds
+- Completed reload, in  0.476 seconds
 Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Project\Game Unity\Game3DMultiplayer\Build\game3dmultiplayer_Data\Managed\System.dll (this message is harmless)
 desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
@@ -22,6 +22,6 @@ desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 16.228140 ms
+UnloadTime: 1.952058 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 440 -> priority: 1 
+  Thread -> id: 1b34 -> priority: 1 

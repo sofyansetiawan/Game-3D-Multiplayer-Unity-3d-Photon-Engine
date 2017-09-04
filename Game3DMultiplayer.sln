@@ -1,7 +1,13 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{806ED8D4-F50F-21BF-FEDE-CB601D9B59B6}") = "Game3DMultiplayer", "Assembly-CSharp.csproj", "{5E451407-3996-EEA3-5947-3BB0B62766B4}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game3DMultiplayer", "Assembly-CSharp-firstpass.csproj", "{5A0B0B73-B795-37E6-3AC3-8899EC834892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game3DMultiplayer", "Assembly-CSharp.csproj", "{5E451407-3996-EEA3-5947-3BB0B62766B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game3DMultiplayer", "Assembly-CSharp-Editor.csproj", "{446B5A9F-4778-767B-4D62-20B2AC8E54EE}"
+EndProject
+Project("{806ED8D4-F50F-21BF-FEDE-CB601D9B59B6}") = "Game3DMultiplayer", "Assembly-UnityScript.unityproj", "{96A1C744-3CD3-9BBC-9E36-750472805429}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +15,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A0B0B73-B795-37E6-3AC3-8899EC834892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A0B0B73-B795-37E6-3AC3-8899EC834892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A0B0B73-B795-37E6-3AC3-8899EC834892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A0B0B73-B795-37E6-3AC3-8899EC834892}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E451407-3996-EEA3-5947-3BB0B62766B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E451407-3996-EEA3-5947-3BB0B62766B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E451407-3996-EEA3-5947-3BB0B62766B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E451407-3996-EEA3-5947-3BB0B62766B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{446B5A9F-4778-767B-4D62-20B2AC8E54EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446B5A9F-4778-767B-4D62-20B2AC8E54EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446B5A9F-4778-767B-4D62-20B2AC8E54EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446B5A9F-4778-767B-4D62-20B2AC8E54EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96A1C744-3CD3-9BBC-9E36-750472805429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96A1C744-3CD3-9BBC-9E36-750472805429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96A1C744-3CD3-9BBC-9E36-750472805429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96A1C744-3CD3-9BBC-9E36-750472805429}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

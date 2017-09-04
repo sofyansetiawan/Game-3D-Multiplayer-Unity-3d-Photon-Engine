@@ -176,8 +176,13 @@ public class PhotonPingManager
         PhotonPing ping;
         if (PhotonHandler.PingImplementation == typeof(PingNativeDynamic))
         {
-            Debug.Log("Using constructor for new PingNativeDynamic()"); // it seems on android, the Activator can't find the default Constructor
+            Debug.Log("Using constructor for new PingNativeDynamic()"); // it seems on Android, the Activator can't find the default Constructor
             ping = new PingNativeDynamic();
+        }
+        else if(PhotonHandler.PingImplementation == typeof(PingNativeStatic))
+        {
+            Debug.Log("Using constructor for new PingNativeStatic()"); // it seems on Switch, the Activator can't find the default Constructor
+            ping = new PingNativeStatic();
         }
         else if (PhotonHandler.PingImplementation == typeof(PingMono))
         {
@@ -255,6 +260,7 @@ public class PhotonPingManager
 
             yield return new WaitForSeconds(0.1f);
         }
+        ping.Dispose();
 
         this.PingsRunning--;
 

@@ -22,7 +22,7 @@ public class PickupDemoGui : MonoBehaviour
 
         if (this.ShowScores)
         {
-            GUILayout.Label("Your Score: " + PhotonNetwork.player.GetScore());
+			GUILayout.Label("Your Score: " + PhotonNetwork.player.GetScore());
         }
 
 
@@ -61,7 +61,7 @@ public class PickupDemoGui : MonoBehaviour
                 List<PhotonPlayer> teamPlayers = PunTeams.PlayersPerTeam[teamName];
                 foreach (PhotonPlayer player in teamPlayers)
                 {
-                    GUILayout.Label("  " + player.ToStringFull() + " Score: " + player.GetScore());
+					GUILayout.Label("  " + player.ToStringFull() + " Score: " + player.GetScore());
                 }
             }
 

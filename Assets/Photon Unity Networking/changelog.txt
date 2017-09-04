@@ -1,3 +1,17 @@
+v1.84.1 (2. June 2017)
+Fixed: A minor bug in the Photon3Unity3d.dll, which is now v4.1.1.13. The StreamBuffer.Seek() could fail to seek position 0 when length is 0.
+
+
+v1.84 (30. May 2017)
+Fixed: PlayerRoomIndexing can now be added at runtime even on non MasterClient instance. master player is now indicated in the inspector.
+Updated: NetworkingPeer.RunViewUpdate allocates less memory.
+Moved: ReorderableListResources to namespace Photon.Pun to avoid conflicts with other "Rotorz" variants. This is an internal Editor-only change.
+Updated: Unity 2017 Support.
+Added: Support for a Switch add-on. You need to be certified developer for the platform to get access for this. Contact us by mail: developer@photonengine.com
+Changed: SocketWebTcp to handle status changes for the used WebSocket. This fixes uncommon issues in WebGL exports.
+Changed: SocketUdp.cs to lock less parts of the DNS / connection setup, which avoids potential freezes.
+Updated: To Photon library v4.1.1.12 with various fixes. See plugins\release_history.txt.
+
 v1.83 (13. April 2017)
 Fixed: A bug in the Photon3Unity3D.dll which led to timeouts. The bug was in v4.1.1.10 (PUN v1.82) and is fixed in v4.1.1.11 (now used in PUN v1.83).
 
@@ -14,7 +28,6 @@ Added: Checks of mandatory configuration values for console exports to make sure
 Fixed: The server selection "Best Region" now supports clusters, if sent by the Name Server. Clusters are optionally used by Exit Games as set of machines in a region. As before, PUN only stores the best region, not the cluster. The idea is that this automatically selects a fitting region (not a specific cluster).
 Added: PhotonNetwork.CloudRegion to make the currently used Cloud Region accessible. This is mostly to expose existing values and to make debugging a little easier.
 Updated: To Photon3Unity3D.dll v4.1.1.10 with some additional improvements in terms of memory usage.
-
 
 v1.81 (16. March 2017)
 Updated: Basic Demo Launcher.cs: removed Log Level setup, it's now done in the Photon Settings.

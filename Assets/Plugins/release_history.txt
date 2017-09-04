@@ -8,6 +8,19 @@ https://doc.photonengine.com
 http://forum.photonengine.com
 
 
+*** Version 4.1.1.13 (2. June 2017 - rev4112)
+	Internal: Fixed StreamBuffer.Seek() which was throwing an exception when seeking position 0 in an empty stream.
+	Removed: The queue-length checks which were using OnStatusChanged to warn about the amount of data queued for sending. Several StatusCode values are now obsolete accordingly.
+	Removed: StatusCode InternalReceiveException = 1039 and TcpRouter* which were obsolete for a longer time.
+	
+*** Version 4.1.1.12 (24. May 2017 - rev4086)
+	Fixed: Peer.timeLastSendOutgoing was set in SendAcksOnly and ReceiveIncomingCommands. This should not happen. In PUN, this led to an issue with the fallback thread, which could not keep the connection.
+	Fixed: DNS resolution in the UDP socket is no longer inside a lock. Even if it takes longer (without network), the socket can now be closed before it's even opened properly, avoiding a freeze.
+	Fixed: UWP clients can set a SocketImplementationConfig. This opens up the use of WebSockets or any IPhotonSocket implementation in UWP, too.
+	Internal: Acknowledgements are no longer created as "commands" and serialized on send. Instead, they are directly written to a byte[] buffer, which is using less memory.
+	Added: PhotonPeer.EnableServerTracing to enable UDP Datagram Tracing on server side. We might ask you to use this when debugging connection issues. Otherwise, don't use this, as you can't access the server's logs anyways.
+
+
 *** Version 4.1.1.11 (13. April 2017 - rev3922)
     Fixed: Bug of v4.1.1.10, which caused disconnects after a short time.
     
@@ -15,7 +28,6 @@ http://forum.photonengine.com
     Internal: Memory Allocation for nCommand and EnetPeer within SendoutGoingCommand, and AreReliableCommandInTransit
     Internal: Refactoring of SerializeToBuffer to prevent memory allocation and access udpBuffer directly instead of using BlockCopy.
     Internal: EnetPeer.channels got removed and replaced by a simple array and a GetChannel() method to access all channels.
-
 
 *** Version 4.1.1.9 (15. March 2017 - rev3884)
     Fixed: Size calculation for Datagram Encryption (used on one console only, so far), when the MTU was changed from default. In some cases, an Exception was thrown: ArgumentException: Offset and length were out of bounds [...] at System.Buffer.BlockCopy. Adjusted GetFragmentLength() and CalculateBufferLen() internally.

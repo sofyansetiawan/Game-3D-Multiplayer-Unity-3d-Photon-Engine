@@ -239,7 +239,11 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
     public bool IsUsingNameServer { get; protected internal set; }
 
     /// <summary>Name Server Host Name for Photon Cloud. Without port and without any prefix.</summary>
+    #if !UNITY_EDITOR && UNITY_SWITCH
+    public const string NameServerHost = "nameserver-eu.cloudapp.net";//set to "ns.exitgames.com" after Nintendo has fixed the traffic manager bug in their dns-resolver for which this is a workaround
+    #else
     public const string NameServerHost = "ns.exitgames.com";
+    #endif
 
     /// <summary>Name Server for HTTP connections to the Photon Cloud. Includes prefix and port.</summary>
     public const string NameServerHttp = "http://ns.exitgamescloud.com:80/photon/n";
@@ -748,7 +752,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
             #if !UNITY_EDITOR && (UNITY_PS3 || UNITY_ANDROID)
             this.SocketImplementationConfig[ConnectionProtocol.Udp] = typeof(SocketUdpNativeDynamic);
             PhotonHandler.PingImplementation = typeof(PingNativeDynamic);
-            #elif !UNITY_EDITOR && UNITY_IPHONE
+            #elif !UNITY_EDITOR && (UNITY_IPHONE || UNITY_SWITCH)
             this.SocketImplementationConfig[ConnectionProtocol.Udp] = typeof(SocketUdpNativeStatic);
             PhotonHandler.PingImplementation = typeof(PingNativeStatic);
             #elif !UNITY_EDITOR && UNITY_WINRT
@@ -2205,17 +2209,17 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
                 // this.mListener.clientErrorReturn(statusCode);
                 break;
 
-            case StatusCode.QueueOutgoingReliableWarning:
-            case StatusCode.QueueOutgoingUnreliableWarning:
-            case StatusCode.QueueOutgoingAcksWarning:
-            case StatusCode.QueueSentWarning:
-                // this.mListener.warningReturn(statusCode);
-                break;
+            //case StatusCode.QueueOutgoingReliableWarning:
+            //case StatusCode.QueueOutgoingUnreliableWarning:
+            //case StatusCode.QueueOutgoingAcksWarning:
+            //case StatusCode.QueueSentWarning:
+            //    // this.mListener.warningReturn(statusCode);
+            //    break;
 
-            case StatusCode.QueueIncomingReliableWarning:
-            case StatusCode.QueueIncomingUnreliableWarning:
-                Debug.Log(statusCode + ". This client buffers many incoming messages. This is OK temporarily. With lots of these warnings, check if you send too much or execute messages too slow. " + (PhotonNetwork.isMessageQueueRunning? "":"Your isMessageQueueRunning is false. This can cause the issue temporarily.") );
-                break;
+            //case StatusCode.QueueIncomingReliableWarning:
+            //case StatusCode.QueueIncomingUnreliableWarning:
+            //    Debug.Log(statusCode + ". This client buffers many incoming messages. This is OK temporarily. With lots of these warnings, check if you send too much or execute messages too slow. " + (PhotonNetwork.isMessageQueueRunning? "":"Your isMessageQueueRunning is false. This can cause the issue temporarily.") );
+            //    break;
 
                 // // TCP "routing" is an option of Photon that's not currently needed (or supported) by PUN
                 //case StatusCode.TcpRouterResponseOk:
@@ -3062,7 +3066,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
         byte group = 0;
         if (evData.ContainsKey((byte)3))
         {
-            group = (byte)evData[(byte)3];
+            group = (byte)evData[(byte)3]; 
         }
 
         short objLevelPrefix = 0;
@@ -3889,6 +3893,9 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
     /// </remarks>
     public static int ObjectsInOneUpdate = 10;
 
+	// cache the RaiseEventOptions to prevent redundant Memory Allocation
+	RaiseEventOptions options = new RaiseEventOptions();
+
     // this is called by Update() and in Unity that means it's single threaded.
     public void RunViewUpdate()
     {
@@ -3921,12 +3928,13 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
 
 
         // we got updates to send. every group is send it's own message and unreliable and reliable are split as well
-        RaiseEventOptions options = new RaiseEventOptions();
+		options.InterestGroup = 0;
+
         #if PHOTON_DEVELOP
         options.Receivers = ReceiverGroup.All;
         #endif
 
-        var enumerator = this.photonViewList.GetEnumerator();   // replacing foreach foreach (PhotonView view in this.photonViewList.Values)
+		var enumerator = this.photonViewList.GetEnumerator();   // replacing foreach (PhotonView view in this.photonViewList.Values) for memory allocation improvement
         while (enumerator.MoveNext())
         {
             PhotonView view = enumerator.Current.Value;
